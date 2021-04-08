@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Customer Input Form</title>
+</head>
+<body>
+	<form
+		action="http://localhost:8080/com.draft.dev.pdf/CustomerPDFGenerator">
+
+		<label for="fname">First name:</label> <input type="text" id="fname"
+			name="fname"><br> <br> 
+			
+		<label for="lname">Last
+			name:</label> <input type="text" id="lname" name="lname"><br> <br>
+
+		<label for="Social Security Number:">Social Security Number:</label> <input
+			type="text" id="SSN" name="SSN"><br> <br> 
+			
+		<label
+			for="Credit Card Number:">Credit Card Number:</label> <input
+			type="text" id="CCN" name="CCN"><br> <br>
+
+
+		<button type="submit" formmethod="post">Create PDF and Redact
+			Confidential Data</button>
+
+	</form>
+</body>
+</html>
