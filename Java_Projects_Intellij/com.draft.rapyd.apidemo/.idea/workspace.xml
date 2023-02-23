@@ -136,7 +136,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/RapydDemo.java</url>
-          <line>97</line>
+          <line>72</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>

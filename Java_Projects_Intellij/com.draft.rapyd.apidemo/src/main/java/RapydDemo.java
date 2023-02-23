@@ -63,32 +63,7 @@ public class RapydDemo {
         return (generatedString);
     }
 
-    public static void main(String[] args) throws Exception {
-        RapydDemo rapydDemo = new RapydDemo();
-        try {
 
-            String httpMethod = "get";// get|put|post|delete - must be lowercase
-            String rapydApiServiceHome = "https://sandboxapi.rapyd.net/";
-            String servicePath = "/v1/" + "payment_methods/countries/US";
-            String accessKey = "F633B289E933D3CBCFF2";//Generated from Rapyd dashboard
-            String secretKey = "986e86960cf68cf7e176f0cea8e525a22edb9b9592ba8337d7f1834c796356b0c8bbde0b4dd607ca";//Generated from Rapyd dashboard
-
-
-            long timestamp = System.currentTimeMillis() / 1000L; // Unix time (seconds).
-
-            String salt = rapydDemo.generateSalt();
-
-            String signature = rapydDemo.createSignature(salt, timestamp, httpMethod, servicePath, accessKey, secretKey);
-
-            HttpResponse response = rapydDemo.getHttpResponseFromRapyd(rapydApiServiceHome, servicePath, accessKey, secretKey, salt, timestamp, signature);
-
-            rapydDemo.prettyPrintHttpResponse(response);
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     public String createSignature(String salt, long timestamp, String httpMethod, String servicePath, String accessKey, String secretKey) {
         String signature = null;
@@ -140,6 +115,32 @@ public class RapydDemo {
             String     paymentName     = paymentObj.get("name").getAsString();
             System.out.println(paymentName);
 
+        }
+    }
+    public static void main(String[] args) throws Exception {
+        RapydDemo rapydDemo = new RapydDemo();
+        try {
+
+            String httpMethod = "get";// get|put|post|delete - must be lowercase
+            String rapydApiServiceHome = "https://sandboxapi.rapyd.net/";
+            String servicePath = "/v1/" + "payment_methods/countries/US";
+            String accessKey = "F633B289E933D3CBCFF2";//Generated from Rapyd dashboard
+            String secretKey = "986e86960cf68cf7e176f0cea8e525a22edb9b9592ba8337d7f1834c796356b0c8bbde0b4dd607ca";//Generated from Rapyd dashboard
+
+
+            long timestamp = System.currentTimeMillis() / 1000L; // Unix time (seconds).
+
+            String salt = rapydDemo.generateSalt();
+
+            String signature = rapydDemo.createSignature(salt, timestamp, httpMethod, servicePath, accessKey, secretKey);
+
+            HttpResponse response = rapydDemo.getHttpResponseFromRapyd(rapydApiServiceHome, servicePath, accessKey, secretKey, salt, timestamp, signature);
+
+            rapydDemo.prettyPrintHttpResponse(response);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
