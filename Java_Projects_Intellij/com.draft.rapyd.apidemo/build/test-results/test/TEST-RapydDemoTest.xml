@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="RapydDemoTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-02-22T11:40:59" hostname="Vikrams-MacBook-Pro.local" time="3.181">
+  <properties/>
+  <testcase name="getHttpResponseFromRapyd()" classname="RapydDemoTest" time="3.178"/>
+  <testcase name="createSignature()" classname="RapydDemoTest" time="0.002"/>
+  <testcase name="generateSalt()" classname="RapydDemoTest" time="0.0"/>
+  <system-out><![CDATA["SUCCESS"
+Available payment methods are..
+Duane Reade
+Cash Payment in US
+Walgreens
+Kum and Go
+Go Mart stores
+Stop-N-Go
+7Eleven
+Sheetz
+ACH Debit
+Rutters
+Same day US ACH debit
+US ACH debit
+Stripes
+Walmart
+Discover
+Visa Debit
+Family Dollar
+Mastercard
+Royal Farms
+Travel Centers of America
+Speedway
+Pilot Flying
+CVS
+Dollar General
+Kwik Trip
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
