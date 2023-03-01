@@ -124,8 +124,8 @@ public class RapydDemo {
             String httpMethod = "get";// get|put|post|delete - must be lowercase
             String rapydApiServiceHome = "https://sandboxapi.rapyd.net/";
             String servicePath = "/v1/" + "payment_methods/countries/US";
-            String accessKey = "F633B289E933D3CBCFF2";//Generated from Rapyd dashboard
-            String secretKey = "986e86960cf68cf7e176f0cea8e525a22edb9b9592ba8337d7f1834c796356b0c8bbde0b4dd607ca";//Generated from Rapyd dashboard
+            String accessKey = "XXXXXXXX";//Generated from Rapyd dashboard
+            String secretKey = "XXXXXXXXXXXXXXXXXXXXXX";//Generated from Rapyd dashboard
 
 
             long timestamp = System.currentTimeMillis() / 1000L; // Unix time (seconds).
