@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "paymenthubdemo",
+  "private_key_id": "477c22e5c9dea3705b2b6066164846555c3a425c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCpqnsRbrY710rH\n68RCmHiK9bYnU+kW6Bdf/VPWLS7gjDJXLy+ueov9pY9Hk7HEvwCyEHzghIZrT8rh\njaZmIG+2tOkz2faw8CgTlNV+p8YRbcj1SivB2YITG2aQrirALAphCrBLfEoU6e3c\nsijdrxNwwPYZWYRa/L/CZbspT4cbA2oWCaigbl5FmN2Qqx4Se0bqB3czeZaclm9r\nwxLzVOANX9hU8uP84TdA0HnV2zMYTX0sRw2ogWnTAYqh0C2lduZiSFiTz03Jhy7z\nJFVcjW+YQkZ8N/aSZpegveXmGg309Gh5jpSeg0nkER9UFn1ZkYWvuslCZS+dD5z2\nDAqw6YQPAgMBAAECggEAGJ5lpCZp5+356l9yB23DU/qKV1OMJ2g++A00rIe63RdK\nuK7entUmWgQ7cZnjOhay/aN500Q3kvuthyP8KKZ9P0gp7H2sl4kJb6nxfqLOkTna\nZolAJy0t/CLGM6kqB998FA+ufA2JXFaDTrpFRsGAMyS0sQH1vBQfqRAE494nzwnn\nxcPmQPpRaUIAvKJ7sidle9rgbJYGfE+wOoWHCigB7dDBhjtkGtI8GccPKcVATzou\nxPTTIIkbXT0R71/5V3NX2Q+Hcohd7tj9g1Q2Vhsp26rt+pAqThbGEGGk1wfzwYJN\n2zmLCd0JH3VsBWbirUQkE1ONqSmEvi5UO74N3hu+eQKBgQDYHPhE5KjlvHZkd2+0\n/vXhjQS6V8DqnIPMPM4j8jjr+5Ixp0ynD4W9wTMRhM2Or2WzVI9Yeo/uDPprlsHc\nbqC7O8dgYjNpBNqGKUYeD+a0kNQSu3X90VUdd1UwKlWmS9kj6txjEG/91NZV143U\n5d2LgqGePybjhIfFWIT883pmeQKBgQDI+vKedrfuzwJNob1fnCqyf0Hb0Vu9lW+s\nZeT+vADNRLtZeIYuHX7SwL6djm8ozhzxZgQ9hZcIkleiud3GGtWYXodPHkWIpAWi\nmgmstFJqrRByoDhwTRDhfeE6DmRDp9AOQhHZKgl4tQuAeDBNkH/WK8Mk4ek3vRR2\nqNAc4Nu8xwKBgDeBOUJ4d+iJPt8OzeHumbgUP+KcJzAagr8x3r/ctkHlmual0UoW\n8oKJ3FPjh+fdpIEqdqaC0/SP4MFBNwkmYKG1+L8Ieau/U2ChuSB/dQFrMQyemO9X\nlES9IWP9e4H6eQqAh5np3tmSkHn7orHLV9s88cVy8sn8f+Jvmbhd0FIBAoGAItWT\n/bE3+hU5Ifl5mDu6DswNvyrPStG+1FOo2Bn/zZQvILfKEe4c0CyGHUrVq23mCFUV\nQRCJd/vdYp/yd2apRMqFi0oE5UUAkQk/ygZLDqBGbIemoJhK57posiZSbIOGhSIg\nc9JcZ+aBQtgSDy+PaLCXFypswLNt+48Q2yCCFXsCgYAzqaSumG2zy/LrjgL+jODr\n69Gfey0lHOwdPNgE1Re0dnPbVeRpeDhBiF+RhmcqzJaB1kvEx5VAHgShKf5Aewph\nyLOzVNx55drtTL9ZaSY5qYjEobuZgB2f6G9jmPBeUoRaQPWlabYx1LLcIvDC2s3P\nqv0lCt3Gge7OO62ptYmErQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "paymentshubdemo@paymenthubdemo.iam.gserviceaccount.com",
+  "client_id": "113313726055275111113",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/paymentshubdemo%40paymenthubdemo.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
