@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.paymentshub.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label fx:id="welcomeText"/>
+    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+
+        <Label text="Recurring Billing" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        <HBox>
+            <Label text="Amount:"/>
+            <TextField fx:id="amountField" promptText="Enter amount" />
+        </HBox>
+        <HBox>
+            <Label text="Interval:"/>
+            <ComboBox fx:id="intervalComboBox" promptText="Select an interval">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Weekly"/>
+                        <String fx:value="Biweekly"/>
+                        <String fx:value="Monthly"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+        </HBox>
+        <Button text="Subscribe" onAction="#subscribe"/>
+        <Button text="Pause" onAction="#pause"/>
+        <Button text="Resume" onAction="#resume"/>
+        <Button text="Cancel" onAction="#cancel"/>
+        <Label fx:id="statusLabel"/>
+    </VBox>
+

@@ -118,7 +118,7 @@ public class DynamicScraper {
 
         for (final HtmlTableCell cell : row.getCells()) {
 
-            System.out.println(cell.asNormalizedText() + ',');
+            System.out.println(cell.asNormalizedText() + ',' + "Test for git");
 
         }
     }

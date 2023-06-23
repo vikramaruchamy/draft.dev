@@ -1,22 +1,26 @@
-import com.google.gson.*;
+package com.example.paymentshub;
+
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 import java.util.Random;
 
 
-public class RapydDemo {
+public class PaymentsDemoOld {
 
     public String getHmacHashValue(String msg, String secretKey, String algorithm) {
         String digest = null;
@@ -78,65 +82,58 @@ public class RapydDemo {
         return signature;
     }
 
-    public HttpResponse getHttpResponseFromRapyd(String rapydApiServiceHome, String servicePath, String accessKey, String secretKey, String salt, long timestamp, String signature) throws IOException {
+    public HttpResponse getHttpResponseFromHub(String apiServiceHome, String servicePath, String accessKey, String secretKey, String salt, long timestamp, String signature) throws IOException {
 
 
-        HttpClient httpclient = HttpClients.createDefault();
+        HttpClient httpClient = HttpClients.createDefault();
+
         HttpResponse response = null;
         try {
-            HttpGet httpget = new HttpGet(rapydApiServiceHome + servicePath);
-            httpget.addHeader("Content-Type", "application/json");
-            httpget.addHeader("access_key", accessKey);
-            httpget.addHeader("salt", salt);
-            httpget.addHeader("timestamp", Long.toString(timestamp));
-            httpget.addHeader("signature", signature);
-            response = httpclient.execute(httpget);
+            HttpPost httpPost = new HttpPost(apiServiceHome + servicePath);
+            URI uri = new URIBuilder(httpPost.getURI())
+                    .addParameter("EPI-Id", "9001-900300-2-6")
+                    .addParameter("EPI-Signature", signature)
+                    .build();
+            httpPost.setURI(uri);
+            httpPost.setHeader("Content-type", "application/json");
+            try {
+                StringEntity stringEntity = new StringEntity(RequestSchemaGenerator.getSampleSchema());
+                httpPost.setEntity(stringEntity);
 
-        } catch (IOException e) {
-            System.err.println("Error while processing Get request : " + e.getMessage());
+                response= httpClient.execute(httpPost);
+                System.out.println("Response: " + response);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
         }
 
         return response;
     }
 
-    public void prettyPrintHttpResponse(HttpResponse response) throws IOException {
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        JsonElement je = JsonParser.parseString(EntityUtils.toString(response.getEntity()));
-        JsonObject obj = je.getAsJsonObject();
-
-        System.out.println(obj.get("status").getAsJsonObject().get("status"));
-
-        JsonArray dataElement = obj.get("data").getAsJsonArray();
-
-        System.out.println("Available payment methods are..");
-        for (JsonElement pa : dataElement) {
-            JsonObject paymentObj = pa.getAsJsonObject();
-            String     paymentName     = paymentObj.get("name").getAsString();
-            System.out.println(paymentName);
-
-        }
-    }
     public static void main(String[] args) throws Exception {
-        RapydDemo rapydDemo = new RapydDemo();
+        PaymentsDemoOld paymentsDemo = new PaymentsDemoOld();
         try {
 
-            String httpMethod = "get";// get|put|post|delete - must be lowercase
-            String rapydApiServiceHome = "https://sandboxapi.rapyd.net/";
-            String servicePath = "/v1/" + "payment_methods/countries/US";
-            String accessKey = "F633B289E933D3CBCFF2";//Generated from Rapyd dashboard
-            String secretKey = "986e86960cf68cf7e176f0cea8e525a22edb9b9592ba8337d7f1834c796356b0c8bbde0b4dd607ca";//Generated from Rapyd dashboard
+            String httpMethod = "post";// get|put|post|delete - must be lowercase
+            String paymentServiceHome = "https://billing.epxuap.com";
+            String servicePath = "/subscription";
+            String accessKey = "9001-900300-2-6";
+            String secretKey = "8EEDC66DF02D7803E05321281FAC8C31";
 
 
             long timestamp = System.currentTimeMillis() / 1000L; // Unix time (seconds).
 
-            String salt = rapydDemo.generateSalt();
+            String salt = paymentsDemo.generateSalt();
 
-            String signature = rapydDemo.createSignature(salt, timestamp, httpMethod, servicePath, accessKey, secretKey);
+            //Generating the EPI Signature
+            String signature = paymentsDemo.createSignature(salt, timestamp, httpMethod, servicePath, accessKey, secretKey);
 
-            HttpResponse response = rapydDemo.getHttpResponseFromRapyd(rapydApiServiceHome, servicePath, accessKey, secretKey, salt, timestamp, signature);
+            HttpResponse response = paymentsDemo.getHttpResponseFromHub(paymentServiceHome, servicePath, accessKey, secretKey, salt, timestamp, signature);
 
-            rapydDemo.prettyPrintHttpResponse(response);
+
 
 
         } catch (Exception e) {
