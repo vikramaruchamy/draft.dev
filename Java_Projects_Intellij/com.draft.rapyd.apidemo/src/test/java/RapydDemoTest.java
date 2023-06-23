@@ -26,8 +26,8 @@ class RapydDemoTest {
         httpMethod = "get";// get|put|post|delete - must be lowercase
         rapydApiServiceHome = "https://sandboxapi.rapyd.net/";
         servicePath = "/v1/" + "payment_methods/countries/US";
-        accessKey = "F633B289E933D3CBCFF2";
-        secretKey = "986e86960cf68cf7e176f0cea8e525a22edb9b9592ba8337d7f1834c796356b0c8bbde0b4dd607ca";
+        accessKey = "XXXXXXXXXXXX";
+        secretKey = "XXXXXXXXXXXXXXXXXXXXXX";
 
 
         timestamp = System.currentTimeMillis() / 1000L; // Unix time (seconds).
