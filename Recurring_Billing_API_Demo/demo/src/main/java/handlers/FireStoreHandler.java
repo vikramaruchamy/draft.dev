@@ -23,7 +23,7 @@ public class FireStoreHandler {
 	private static Firestore getFireStoreObject() throws IOException {
 		ClassLoader classLoader = FireStoreHandler.class.getClassLoader();
 		
-		InputStream inputStream = classLoader.getResourceAsStream("paymenthubdemo-477c22e5c9de.json");
+		InputStream inputStream = classLoader.getResourceAsStream("firestorecredentials.json");
 
 		FirestoreOptions options = FirestoreOptions.newBuilder()
 				.setCredentials(GoogleCredentials.fromStream(inputStream)).build();

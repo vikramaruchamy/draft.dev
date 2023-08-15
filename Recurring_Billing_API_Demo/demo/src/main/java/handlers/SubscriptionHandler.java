@@ -65,14 +65,15 @@ public class SubscriptionHandler extends HttpServlet {
 		String changeSubscription = request.getParameter("changeSub");
 
 		String responseCode = "";
+		String subscriptionMessage = "";
 		if (subscriptionId != null && subscriptionId.equals("0")) {
 			JsonObject inputJSON = generateJSONFromInput(firstName, lastName, phone, email, accountNumber,
 					expirationDate, cvv, postalCode, streetAddress, frequency, billingDate, numberOfPayments,
 					description, plan);
 			responseCode = addSubscription(inputJSON);
 			if (responseCode.equals("00")) {
-
-				redirectToProfilePage(response, email);
+				subscriptionMessage = "Subscription created succesfully. ";
+				redirectToProfilePage(response, email, subscriptionMessage);
 			} else {
 				printErrorMessage(response, responseCode);
 			}
@@ -91,19 +92,22 @@ public class SubscriptionHandler extends HttpServlet {
 				jsonObject.addProperty("Paused", true);
 
 				httpResponseCode = pauseResumeSubscription(email, jsonObject);
+				subscriptionMessage = "Successfully paused.";
 			} else if (changeSubscription != null && changeSubscription.equals("resume")) {
 
 				jsonObject.addProperty("Paused", false);
 
 				httpResponseCode = pauseResumeSubscription(email, jsonObject);
+				subscriptionMessage = "Successfully resumed.";
 			} else if (changeSubscription != null && changeSubscription.equals("cancel")) {
 
 				httpResponseCode = cancelSubscription(email, jsonObject);
+				subscriptionMessage = "Successfully cancelled.";
 			}
 
 			if (httpResponseCode == 200) {
 
-				redirectToProfilePage(response, email);
+				redirectToProfilePage(response, email, subscriptionMessage);
 			} else {
 				printErrorMessage(response, responseCode);
 			}
@@ -113,15 +117,15 @@ public class SubscriptionHandler extends HttpServlet {
 	}
 
 	private void printErrorMessage(HttpServletResponse response, String responseCode) throws IOException {
-		response.getWriter()
-				.println("<h1>Error while creating subscription with the following response code!</h1>");
+		response.getWriter().println("<h1>Error while creating subscription with the following response code!</h1>");
 		response.getWriter().println("<h2> " + responseCode + "!</h2>");
 	}
 
-	private void redirectToProfilePage(HttpServletResponse response, String email) throws IOException {
+	private void redirectToProfilePage(HttpServletResponse response, String email, String subscriptionMessage)
+			throws IOException {
 		response.getWriter().println("<h1>Processed successfully!</h1>");
 
-		String redirectURL = "/profile?mailID=" + email;
+		String redirectURL = "/profile?mailID=" + email + "&subscriptionMessage=" + subscriptionMessage;
 		response.sendRedirect(redirectURL);
 	}
 
@@ -225,16 +229,19 @@ public class SubscriptionHandler extends HttpServlet {
 
 	private int pauseResumeSubscription(String emailId, JsonObject jsonPayload) {
 
-		String endPoint = "/pause";
+		String endPoint = "/subscription/pause";
 
 		String requestURI = API_URL + endPoint;
+
+		System.out.println(jsonPayload);
 
 		HttpResponse<String> response = executeHttpRequest(jsonPayload, endPoint, requestURI);
 
 		Gson gson = new Gson();
 
 		JsonObject responseString = gson.fromJson(response.body(), JsonObject.class);
-
+		System.out.println(responseString);
+		System.out.println(emailId);
 		addJSONTOFireStore(emailId, "SubscriptionResponse", responseString);
 
 		return response.statusCode();
@@ -243,7 +250,7 @@ public class SubscriptionHandler extends HttpServlet {
 
 	private int cancelSubscription(String emailId, JsonObject jsonPayload) {
 
-		String endPoint = "/cancelsubscription";
+		String endPoint = "/subscription/cancel";
 
 		String requestURI = API_URL + endPoint;
 

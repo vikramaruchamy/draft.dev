@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="193b3ab7-cd39-407f-aaac-ee6fbe361826" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Java_Projects_Intellij/com.draft.rapyd.apidemo/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../com.draft.paymentshub.demo/src/main/java/com/draft/paymentshub/demo/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../com.draft.paymentshub.demo/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Java_Projects_Intellij/com.draft.htmlunit.demo/.gradle/7.5.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java_Projects_Intellij/com.draft.htmlunit.demo/.gradle/7.5.1/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Java_Projects_Intellij/com.draft.htmlunit.demo/.gradle/7.5.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java_Projects_Intellij/com.draft.htmlunit.demo/.gradle/7.5.1/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Java_Projects_Intellij/com.draft.htmlunit.demo/src/main/java/com/draft/htmlunit/demo/DynamicScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java_Projects_Intellij/com.draft.htmlunit.demo/src/main/java/com/draft/htmlunit/demo/DynamicScraper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Java_Projects_Intellij/com.draft.rapyd.apidemo/.gradle/7.5.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java_Projects_Intellij/com.draft.rapyd.apidemo/.gradle/7.5.1/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Java_Projects_Intellij/com.draft.rapyd.apidemo/.gradle/7.5.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java_Projects_Intellij/com.draft.rapyd.apidemo/.gradle/7.5.1/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Java_Projects_Intellij/com.draft.rapyd.apidemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java_Projects_Intellij/com.draft.rapyd.apidemo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Java_Projects_Intellij/com.draft.rapyd.apidemo/src/main/java/RapydDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java_Projects_Intellij/com.draft.rapyd.apidemo/src/main/java/RapydDemo.java" afterDir="false" />
-    </list>
+    <list default="true" id="193b3ab7-cd39-407f-aaac-ee6fbe361826" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,13 +15,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/vikram/Documents/GitHub/draft.dev/paymentshub_demo/com.draft.paymenthub.demo"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/vikram/Documents/GitHub/draft.dev/paymentshub_demo/com.draft.paymenthub.demo&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
